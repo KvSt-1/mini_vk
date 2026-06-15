@@ -1,0 +1,12 @@
+{% extends "mini_vk_/base.html" %}
+{% block content %}
+
+<h1>Редактирование</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Сохранить</button>
+</form>
+
+{% endblock content %}

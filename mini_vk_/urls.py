@@ -9,5 +9,9 @@ urlpatterns = [
     # Страница со списком профилей
     path('profiles/', views.profiles, name='profiles'),
     # Cтраница конкретного пользователя
-    path('profiles/<int:profile_id>/',views.profile, name = 'profile')
+    path('profiles/<int:profile_id>/',views.profile, name = 'profile'),
+    #Редактирование профил
+    path('profiles/<int:profile_id>/edit/',views.edit_profile, name = 'edit_profile'),
+    #Редактирование поста
+    path('post/<int:post_id>/edit/',views.edit_post, name='edit_post')
 ]

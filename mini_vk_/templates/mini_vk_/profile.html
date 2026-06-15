@@ -6,10 +6,17 @@
 <p>О себе  {{profile.bio}}</p>
 <p>Дата рождения {{profile.birth_date}}</p>
 
+<a href="{% url 'mini_vk_:edit_profile' profile.id %}">
+    Редактировать профиль
+</a>
+
 <h2>Посты</h2>
 {% for post in posts %}
     <p>{{ post.text }}</p>
     <p>{{ post.created_at }}</p>
+<a href="{% url 'mini_vk_:edit_post' post.id %}">
+    Редактировать Пост
+</a>
 {% empty %}
     <p>Постов пока нет</p>
 {% endfor %}
