@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+def index(request):
+    "Домашиняя страница приложения mini_vk"
+    return render(request, 'mini_vk_/index.html')
