@@ -1,0 +1,17 @@
+{% extends 'mini_vk_/base.html' %}
+{% block content %}
+
+<h1>{{ profile.user.username }}</h1>
+<p>Город {{profile.city}}</p>
+<p>О себе  {{profile.bio}}</p>
+<p>Дата рождения {{profile.birth_date}}</p>
+
+<h2>Посты</h2>
+{% for post in posts %}
+    <p>{{ post.text }}</p>
+    <p>{{ post.created_at }}</p>
+{% empty %}
+    <p>Постов пока нет</p>
+{% endfor %}
+
+{% endblock content %}

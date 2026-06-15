@@ -6,4 +6,8 @@ app_name = 'mini_vk_'
 urlpatterns = [
     #Домашняя страница
     path('', views.index, name='index'),
+    # Страница со списком профилей
+    path('profiles/', views.profiles, name='profiles'),
+    # Cтраница конкретного пользователя
+    path('profiles/<int:profile_id>/',views.profile, name = 'profile')
 ]

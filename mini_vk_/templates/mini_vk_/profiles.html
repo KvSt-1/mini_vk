@@ -1,0 +1,18 @@
+{% extends "mini_vk_/base.html" %}
+
+{% block content %}
+<h1>Профили</h1>
+
+<ul>
+    {% for profile in profiles %}
+        <li>
+            <a href="{% url 'mini_vk_:profile' profile.id %}">
+                {{ profile.user.username }}
+            </a>
+        </li>
+    {% empty %}
+        <li>Профилей пока нет.</li>
+    {% endfor %}
+</ul>
+
+{% endblock content %}
