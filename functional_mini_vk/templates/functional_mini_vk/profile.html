@@ -1,4 +1,4 @@
-{% extends 'mini_vk_/base.html' %}
+{% extends 'functional_mini_vk/base.html' %}
 {% block content %}
 
 <h1>{{ profile.user.username }}</h1>
@@ -6,7 +6,7 @@
 <p>О себе  {{profile.bio}}</p>
 <p>Дата рождения {{profile.birth_date}}</p>
 
-<a href="{% url 'mini_vk_:edit_profile' profile.id %}">
+<a href="{% url 'functional_mini_vk:edit_profile' profile.id %}">
     Редактировать профиль
 </a>
 
@@ -14,7 +14,7 @@
 {% for post in posts %}
     <p>{{ post.text }}</p>
     <p>{{ post.created_at }}</p>
-<a href="{% url 'mini_vk_:edit_post' post.id %}">
+<a href="{% url 'functional_mini_vk:edit_post' post.id %}">
     Редактировать Пост
 </a>
 {% empty %}

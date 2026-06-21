@@ -1,4 +1,4 @@
-{% extends "mini_vk_/base.html" %}
+{% extends "functional_mini_vk/base.html" %}
 
 {% block content %}
 <h1>Профили</h1>
@@ -6,7 +6,7 @@
 <ul>
     {% for profile in profiles %}
         <li>
-            <a href="{% url 'mini_vk_:profile' profile.id %}">
+            <a href="{% url 'functional_mini_vk:profile' profile.id %}">
                 {{ profile.user.username }}
             </a>
         </li>
