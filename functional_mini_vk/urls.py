@@ -1,8 +1,8 @@
-"Определяет схемы URL для mini_vk_"
+"Определяет схемы URL для functional_mini_vk"
 from django.urls import path
 from . import views
 
-app_name = 'mini_vk_'
+app_name = 'functional_mini_vk'
 urlpatterns = [
     #Домашняя страница
     path('', views.index, name='index'),

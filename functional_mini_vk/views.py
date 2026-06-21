@@ -3,20 +3,20 @@ from .models import Profile,Post
 from .forms import PostForm,ProfileForm
 
 def index(request):
-    "Домашняя страница приложения mini_vk"
-    return render(request, 'mini_vk_/index.html')
+    "Домашняя страница приложения core_mini_vk"
+    return render(request, 'functional_mini_vk/index.html')
 
 def profiles(request):
     "Выводит список профилей"
     profiles = Profile.objects.all()
     context = {'profiles': profiles}
-    return render(request, 'mini_vk_/profiles.html', context)
+    return render(request, 'functional_mini_vk/profiles.html', context)
 
 def profile(request, profile_id):
     "Выводит конкретный профиль"
     profile = get_object_or_404(Profile, id=profile_id)
     posts = Post.objects.filter(author=profile.user)
-    return render(request, 'mini_vk_/profile.html',
+    return render(request, 'functional_mini_vk/profile.html',
                   {'profile': profile
                    , 'posts': posts})
 
@@ -28,10 +28,10 @@ def edit_profile(request, profile_id):
         form = ProfileForm(request.POST,instance=profile)
         if form.is_valid():
             form.save()
-            return redirect('mini_vk_:profile', profile_id = profile_id)
+            return redirect('functional_mini_vk:profile', profile_id = profile_id)
     else:
         form = ProfileForm(instance=profile)
-    return render(request,'mini_vk_/edit_profile.html', {'form':form})
+    return render(request,'functional_mini_vk/edit_profile.html', {'form':form})
 
 def edit_post(request, post_id):
     "Редактирование Поста"
@@ -41,10 +41,10 @@ def edit_post(request, post_id):
         form = PostForm(request.POST,instance=post)
         if form.is_valid():
             form.save()
-            return redirect('mini_vk_:profile', profile_id=post.author.profile.id)
+            return redirect('functional_mini_vk:profile', profile_id=post.author.profile.id)
     else:
         form = PostForm(instance=post)
-    return render(request,'mini_vk_/edit_post.html',{'form':form})
+    return render(request,'functional_mini_vk/edit_post.html',{'form':form})
 
 
 

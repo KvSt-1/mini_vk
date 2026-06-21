@@ -1,5 +1,5 @@
 """
-URL configuration for mini_vk project.
+URL configuration for core_mini_vk project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/6.0/topics/http/urls/
@@ -20,5 +20,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('mini_vk_.urls')),
+    path('', include('functional_mini_vk.urls')),
 ]
