@@ -32,7 +32,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     # Мои приложения
-    'functional_mini_vk',
+    'users',
+    'posts',
     # Приложения django по умолчанию
     'django.contrib.admin',
     'django.contrib.auth',

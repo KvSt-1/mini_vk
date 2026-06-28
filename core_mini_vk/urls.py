@@ -20,5 +20,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('functional_mini_vk.urls')),
+    path('', include('users.urls')),
 ]
