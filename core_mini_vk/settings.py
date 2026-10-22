@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     # Мои приложения
     'users',
     'posts',
+    'rest_framework',
     # Приложения django по умолчанию
     'django.contrib.admin',
     'django.contrib.auth',

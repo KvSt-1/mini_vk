@@ -1,12 +1,23 @@
 from django.shortcuts import render, get_object_or_404, redirect
+
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
 from .models import Profile
-from .forms import ProfileForm
+from .serializers import ProfileSerializer
 
 def index(request):
     "Домашняя страница приложения core_mini_vk"
     return render(request, 'users/index.html')
 
-def profiles(request):
+@api_view(['GET'])
+def profile_list(request):
+    profiles = Profile.objects.all()
+    serializer = ProfileSerializer(profiles, many=True)
+
+    return Response(serializer.data)
+
+
+#def profiles(request):
     "Выводит список профилей"
     profiles = Profile.objects.all()
     context = {'profiles': profiles}

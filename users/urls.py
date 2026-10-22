@@ -7,7 +7,7 @@ urlpatterns = [
     #Домашняя страница
     path('', views.index, name='index'),
     # Страница со списком профилей
-    path('profiles/', views.profiles, name='profiles'),
+    path('api/profiles/', views.profile_list, name='profile_list'),
     # Cтраница конкретного пользователя
     path('profiles/<int:profile_id>/',views.profile, name = 'profile'),
     #Редактирование профил
