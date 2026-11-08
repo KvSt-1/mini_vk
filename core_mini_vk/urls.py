@@ -15,11 +15,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from users.views import ProfileViewSet
+from posts.views import PostViewSet
 from django.urls import path, include
 from rest_framework import routers
 
 router= routers.DefaultRouter()
 router.register(r'profiles', ProfileViewSet)
+router.register(r'posts', PostViewSet)
 
 urlpatterns = [
     path("api/", include(router.urls)),
