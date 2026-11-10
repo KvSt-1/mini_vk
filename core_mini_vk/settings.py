@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'users',
     'posts',
     'rest_framework',
+    'comments',
     # Приложения django по умолчанию
     'django.contrib.admin',
     'django.contrib.auth',

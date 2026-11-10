@@ -16,12 +16,14 @@ Including another URLconf
 """
 from users.views import ProfileViewSet
 from posts.views import PostViewSet
+from comments.views import CommentViewSet
 from django.urls import path, include
 from rest_framework import routers
 
 router= routers.DefaultRouter()
 router.register(r'profiles', ProfileViewSet)
 router.register(r'posts', PostViewSet)
+router.register(r'comments', CommentViewSet)
 
 urlpatterns = [
     path("api/", include(router.urls)),
